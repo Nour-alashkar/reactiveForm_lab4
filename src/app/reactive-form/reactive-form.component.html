@@ -1,0 +1,41 @@
+<div class="container">
+
+    <form class="my-3" [formGroup]="registerForm" (ngSubmit)="(registerSender())">
+        <div class="form-group mb-2">
+            <label for="email">Email address</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                placeholder="Enter email" formControlName="email">
+            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+        </div>
+
+
+        <div class="form-group mb-2">
+            <label for="password">Password</label>
+            <input type="text " class="form-control" id="exampleInputPassword1" placeholder="Password"
+                formArrayName="password">
+        </div>
+
+
+
+        <div class="form-group mb-2">
+            <label for="userName">user Name</label>
+            <input type="text " class="form-control" id="exampleInputuserName1" placeholder="user name"
+                formArrayName="userName" >
+        </div>
+
+        @if (registerForm.controls['userName'].invalid && registerForm.controls['userName'].touched)
+        {
+        <small id="emailHelp" class="form-text text-danger">Please add your name</small>
+        }
+
+
+        <div class="form-group mb-2">
+            <label for="phone">Phone</label>
+            <input type="number " class="form-control" id="exampleInputphone1" placeholder="phone"
+                formArrayName="phone">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+
+    </form>
+
+</div>
